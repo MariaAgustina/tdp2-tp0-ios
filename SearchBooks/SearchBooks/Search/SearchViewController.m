@@ -7,13 +7,12 @@
 //
 
 #import "SearchViewController.h"
-#import "SearchService.h"
-#import "ServiceDelegate.h"
-#import "BookList.h"
+#import "ResultsTableViewController.h"
+#import "BookServiceDelegate.h"
+#import "BookService.h"
 
-@interface SearchViewController () <ServiceDelegate>
+@interface SearchViewController () <BookServiceDelegate>
 
-@property (strong, nonatomic) SearchService *searchService;
 @property (weak, nonatomic) IBOutlet UITextField *textView;
 
 @end
@@ -22,26 +21,28 @@
 @implementation SearchViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.title = @"Búsqueda";
-    
-    self.searchService = [[SearchService alloc]initWithDelegate:self];
-    
 }
 
-- (void)serviceSuccededWithResponse:(NSDictionary*)response {
-    BookList* booklist = [[BookList alloc]initWithDictionary:response];
-    //TODO: push list view controller and set book list first page
-    
+- (IBAction)didPressedSearchButton:(id)sender {
+    BookService *bookService = [BookService sharedInstance];
+    [bookService searchBooks:self.textView.text withDelegate:self];
 }
 
-- (void)serviceFailedWithError:(NSError*)error {
-    //TODO
+- (void)showResultsScreen {
+    ResultsTableViewController *vc = (ResultsTableViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ResultsTableViewController"];
+    vc.searchText = [self.textView.text copy];
+    [self.navigationController showViewController:vc sender:nil];
 }
 
-- (IBAction)searchButtonPressed:(id)sender {
-    [self.searchService getBooksForText:self.textView.text andPage:1];
+ #pragma mark - BookServiceDelegate
+- (void)didFinishSearching {
+    BookService *bookService = [BookService sharedInstance];
+    if ([[bookService getBooks] count]){
+        [self showResultsScreen];
+    }
 }
+
 
 @end
