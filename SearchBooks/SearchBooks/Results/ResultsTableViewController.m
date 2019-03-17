@@ -7,10 +7,15 @@
 //
 
 #import "ResultsTableViewController.h"
+#import "SearchService.h"
+#import "ServiceDelegate.h"
+#import "BookList.h"
 
-@interface ResultsTableViewController ()
 
-@property NSArray* books;
+@interface ResultsTableViewController () <ServiceDelegate>
+
+@property (strong, nonatomic) BookList* booklist;
+@property (strong, nonatomic) SearchService *searchService;
 
 @end
 
@@ -19,25 +24,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.searchService = [[SearchService alloc]initWithDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.title = self.searchText;
     [self searchBooks];
-    NSLog(@"books: %@", self.books);
+}
+
+- (void)searchBooks {
+    [self.searchService getBooksForText:self.searchText andPage:1];
+}
+
+- (void)serviceSuccededWithResponse:(NSDictionary*)response {
+    self.booklist = [[BookList alloc]initWithDictionary:response];
+    [self.tableView reloadData];
+}
+
+- (void)serviceFailedWithError:(NSError*)error {
+    //TODO
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)searchBooks {
-    self.books = [NSArray arrayWithObjects:@"Harry Potter", @"Lord of the Rings", @"Fundacion", nil];
 }
 
 #pragma mark - Table view data source
@@ -47,21 +57,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.books count];
+    return [self.booklist.books count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     
-    NSURL *imageURL = [NSURL URLWithString:@"https://www.ibercultura.ch/upload/producto/imagen/grd/32614/32614_0.jpg"];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    NSString *labelText = [self.books objectAtIndex:indexPath.row];
+    Book *book = [self.booklist.books objectAtIndex:indexPath.row];
+    NSString *labelText = book.title;
     
     [cell.textLabel setText:labelText];
-    
-    cell.accessoryView = [[UIImageView alloc] initWithImage:image];
 
     return cell;
 }

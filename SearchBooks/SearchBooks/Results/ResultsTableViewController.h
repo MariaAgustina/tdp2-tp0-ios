@@ -10,4 +10,6 @@
 
 @interface ResultsTableViewController : UITableViewController
 
+@property NSString *searchText;
+
 @end

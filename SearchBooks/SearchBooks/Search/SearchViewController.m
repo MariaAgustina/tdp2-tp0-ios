@@ -7,13 +7,10 @@
 //
 
 #import "SearchViewController.h"
-#import "SearchService.h"
-#import "ServiceDelegate.h"
-#import "BookList.h"
+#import "ResultsTableViewController.h"
 
-@interface SearchViewController () <ServiceDelegate>
+@interface SearchViewController ()
 
-@property (strong, nonatomic) SearchService *searchService;
 @property (weak, nonatomic) IBOutlet UITextField *textView;
 
 @end
@@ -22,26 +19,17 @@
 @implementation SearchViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     self.title = @"Búsqueda";
-    
-    self.searchService = [[SearchService alloc]initWithDelegate:self];
-    
 }
 
-- (void)serviceSuccededWithResponse:(NSDictionary*)response {
-    BookList* booklist = [[BookList alloc]initWithDictionary:response];
-    //TODO: push list view controller and set book list first page
-    
-}
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     ResultsTableViewController *targetVC = (ResultsTableViewController *)segue.destinationViewController;
+     targetVC.searchText = [self.textView.text copy];
+ }
 
-- (void)serviceFailedWithError:(NSError*)error {
-    //TODO
-}
-
-- (IBAction)searchButtonPressed:(id)sender {
-    [self.searchService getBooksForText:self.textView.text andPage:1];
-}
 
 @end
