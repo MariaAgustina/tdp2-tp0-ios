@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2ED168453EC64599E9A5F1 /* libPods-SearchBooks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3A221A7448C03340DD2E4B /* libPods-SearchBooks.a */; };
 		9339A30F223DB697004648E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A30E223DB697004648E0 /* AppDelegate.m */; };
 		9339A312223DB697004648E0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A311223DB697004648E0 /* SearchViewController.m */; };
 		9339A315223DB697004648E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9339A313223DB697004648E0 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		9339A31D223DB69A004648E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A31C223DB69A004648E0 /* main.m */; };
 		9339A327223DB69A004648E0 /* SearchBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A326223DB69A004648E0 /* SearchBooksTests.m */; };
 		9339A332223DB69A004648E0 /* SearchBooksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A331223DB69A004648E0 /* SearchBooksUITests.m */; };
-		B4D8607F6566877FB8BDC5C4 /* libPods-SearchBooks.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B329B26E19510CD43A0F826B /* libPods-SearchBooks.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D16732875A3FFAD0337B9E0 /* Pods-SearchBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchBooks/Pods-SearchBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		0A3A221A7448C03340DD2E4B /* libPods-SearchBooks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SearchBooks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339A30A223DB697004648E0 /* SearchBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339A30D223DB697004648E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9339A30E223DB697004648E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,8 +53,8 @@
 		9339A32D223DB69A004648E0 /* SearchBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339A331223DB69A004648E0 /* SearchBooksUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBooksUITests.m; sourceTree = "<group>"; };
 		9339A333223DB69A004648E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B329B26E19510CD43A0F826B /* libPods-SearchBooks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SearchBooks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3A19FACE141DF956BE1C39B /* Pods-SearchBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchBooks/Pods-SearchBooks.release.xcconfig"; sourceTree = "<group>"; };
+		DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.release.xcconfig"; path = "Target Support Files/Pods-SearchBooks/Pods-SearchBooks.release.xcconfig"; sourceTree = "<group>"; };
+		FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.debug.xcconfig"; path = "Target Support Files/Pods-SearchBooks/Pods-SearchBooks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D8607F6566877FB8BDC5C4 /* libPods-SearchBooks.a in Frameworks */,
+				4B2ED168453EC64599E9A5F1 /* libPods-SearchBooks.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,19 +83,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4BB370CBE941D9B7B64CC159 /* Pods */ = {
+		279C7AA997FFEAC82572F95B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D16732875A3FFAD0337B9E0 /* Pods-SearchBooks.debug.xcconfig */,
-				E3A19FACE141DF956BE1C39B /* Pods-SearchBooks.release.xcconfig */,
+				FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */,
+				DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		630EFD396B1BFBEB281B8C64 /* Frameworks */ = {
+		5F2710430EDF8E7C82F999B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B329B26E19510CD43A0F826B /* libPods-SearchBooks.a */,
+				0A3A221A7448C03340DD2E4B /* libPods-SearchBooks.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +108,8 @@
 				9339A325223DB69A004648E0 /* SearchBooksTests */,
 				9339A330223DB69A004648E0 /* SearchBooksUITests */,
 				9339A30B223DB697004648E0 /* Products */,
-				4BB370CBE941D9B7B64CC159 /* Pods */,
-				630EFD396B1BFBEB281B8C64 /* Frameworks */,
+				279C7AA997FFEAC82572F95B /* Pods */,
+				5F2710430EDF8E7C82F999B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,7 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9339A336223DB69A004648E0 /* Build configuration list for PBXNativeTarget "SearchBooks" */;
 			buildPhases = (
-				F16C5AD2AD06C412D16EB973 /* [CP] Check Pods Manifest.lock */,
+				D2BE4A57232594D99CFF4DF1 /* [CP] Check Pods Manifest.lock */,
 				9339A306223DB697004648E0 /* Sources */,
 				9339A307223DB697004648E0 /* Frameworks */,
 				9339A308223DB697004648E0 /* Resources */,
@@ -232,19 +233,22 @@
 				TargetAttributes = {
 					9339A309223DB697004648E0 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 					};
 					9339A321223DB69A004648E0 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 9339A309223DB697004648E0;
 					};
 					9339A32C223DB69A004648E0 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 9339A309223DB697004648E0;
 					};
 				};
 			};
 			buildConfigurationList = 9339A305223DB697004648E0 /* Build configuration list for PBXProject "SearchBooks" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -291,7 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F16C5AD2AD06C412D16EB973 /* [CP] Check Pods Manifest.lock */ = {
+		D2BE4A57232594D99CFF4DF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -481,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -491,15 +495,14 @@
 		};
 		9339A337223DB69A004648E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D16732875A3FFAD0337B9E0 /* Pods-SearchBooks.debug.xcconfig */;
+			baseConfigurationReference = FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZK88ESL9CA;
 				INFOPLIST_FILE = SearchBooks/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -508,15 +511,14 @@
 		};
 		9339A338223DB69A004648E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3A19FACE141DF956BE1C39B /* Pods-SearchBooks.release.xcconfig */;
+			baseConfigurationReference = DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZK88ESL9CA;
 				INFOPLIST_FILE = SearchBooks/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,11 +531,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchBooksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -547,11 +545,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchBooksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooksTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,11 +558,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchBooksUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -581,11 +571,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SearchBooksUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.searchbooks.SearchBooksUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
