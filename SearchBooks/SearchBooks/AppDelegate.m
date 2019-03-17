@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *initialVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:initialVC];
+    
+    navController.navigationBar.topItem.title = @"";
+    navController.navigationBar.barStyle = UIBarStyleDefault;
+    navController.navigationBar.barTintColor = [UIColor colorWithRed:38.0/255.0 green:166.0/255.0 blue:154.0/255.0 alpha:1.0];
+    navController.navigationBar.translucent = NO;
+    navController.navigationBar.opaque = YES;
+    
+    [self.window setRootViewController:navController];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
