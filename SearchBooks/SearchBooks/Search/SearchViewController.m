@@ -6,13 +6,13 @@
 //  Copyright © 2019 agustina markosich. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SearchViewController.h"
 
-@interface ViewController ()
+@interface SearchViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SearchViewController
 
 - (void)viewDidLoad {
     

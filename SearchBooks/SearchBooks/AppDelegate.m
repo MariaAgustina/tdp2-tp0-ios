@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "SearchViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController *initialVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+    SearchViewController *initialVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:initialVC];
     
