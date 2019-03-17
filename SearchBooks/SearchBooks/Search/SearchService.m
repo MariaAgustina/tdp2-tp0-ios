@@ -23,7 +23,8 @@
 -(void)getBooksForText:(NSString*)text andPage:(NSInteger)page
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://localhost:3000/books/search?query=a&page=1" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    NSString* urlString = [NSString stringWithFormat:@"http://localhost:3000/books/search?query=%@&page=%ld",text,(long)page];
+    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         __strong id <ServiceDelegate> strongDelegate = self.delegate;
         [strongDelegate serviceSuccededWithResponse:responseObject];

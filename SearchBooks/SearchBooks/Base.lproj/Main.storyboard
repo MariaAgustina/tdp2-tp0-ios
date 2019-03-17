@@ -16,13 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piP-Q1-mpC">
+                                <rect key="frame" x="37.5" y="101" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C5-db-YMR">
+                                <rect key="frame" x="37.5" y="152" width="300" height="30"/>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sda-hF-xoY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2C5-db-YMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ey-RJ-Oq4"/>
+                            <constraint firstItem="2C5-db-YMR" firstAttribute="top" secondItem="piP-Q1-mpC" secondAttribute="bottom" constant="21" id="4YS-y5-Rmp"/>
+                            <constraint firstItem="piP-Q1-mpC" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="A8M-59-bif"/>
+                            <constraint firstItem="piP-Q1-mpC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="BX2-I5-cnD"/>
+                            <constraint firstItem="2C5-db-YMR" firstAttribute="width" secondItem="piP-Q1-mpC" secondAttribute="width" id="aNW-oM-X8R"/>
+                            <constraint firstItem="piP-Q1-mpC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lzg-tV-g1O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="textView" destination="piP-Q1-mpC" id="9UN-ig-6lW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>

@@ -14,6 +14,7 @@
 @interface SearchViewController () <ServiceDelegate>
 
 @property (strong, nonatomic) SearchService *searchService;
+@property (weak, nonatomic) IBOutlet UITextField *textView;
 
 @end
 
@@ -26,8 +27,6 @@
     self.title = @"Búsqueda";
     
     self.searchService = [[SearchService alloc]initWithDelegate:self];
-    [self.searchService getBooksForText:@"Hola" andPage:1];
-    
     
 }
 
@@ -39,6 +38,10 @@
 
 - (void)serviceFailedWithError:(NSError*)error {
     //TODO
+}
+
+- (IBAction)searchButtonPressed:(id)sender {
+    [self.searchService getBooksForText:self.textView.text andPage:1];
 }
 
 @end
