@@ -527,7 +527,7 @@
 		};
 		9339A337223DB69A004648E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2057F680150F78DC44369194 /* Pods-SearchBooks.debug.xcconfig */;
+			baseConfigurationReference = FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,7 +543,7 @@
 		};
 		9339A338223DB69A004648E0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02858BD4F60647D751BF7FDB /* Pods-SearchBooks.release.xcconfig */;
+			baseConfigurationReference = DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
