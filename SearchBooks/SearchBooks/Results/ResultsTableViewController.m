@@ -7,15 +7,12 @@
 //
 
 #import "ResultsTableViewController.h"
-#import "SearchService.h"
-#import "ServiceDelegate.h"
-#import "BookList.h"
+#import "Book.h"
+#import "BookService.h"
 
+@interface ResultsTableViewController ()
 
-@interface ResultsTableViewController () <ServiceDelegate>
-
-@property (strong, nonatomic) BookList* booklist;
-@property (strong, nonatomic) SearchService *searchService;
+@property (strong, nonatomic) NSArray<Book*>* books;
 
 @end
 
@@ -23,26 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.searchService = [[SearchService alloc]initWithDelegate:self];
+    [self getBooks];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.title = self.searchText;
-    [self searchBooks];
 }
 
-- (void)searchBooks {
-    [self.searchService getBooksForText:self.searchText andPage:1];
-}
-
-- (void)serviceSuccededWithResponse:(NSDictionary*)response {
-    self.booklist = [[BookList alloc]initWithDictionary:response];
-    [self.tableView reloadData];
-}
-
-- (void)serviceFailedWithError:(NSError*)error {
-    //TODO
+- (void)getBooks {
+    BookService *bookService = [BookService sharedInstance];
+    self.books = [bookService getBooks];
+//    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,13 +45,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.booklist.books count];
+    return [self.books count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookCell" forIndexPath:indexPath];
     
-    Book *book = [self.booklist.books objectAtIndex:indexPath.row];
+    Book *book = [self.books objectAtIndex:indexPath.row];
     NSString *labelText = book.title;
     
     [cell.textLabel setText:labelText];
