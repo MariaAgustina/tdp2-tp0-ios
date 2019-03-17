@@ -17,6 +17,9 @@
 		9339A31D223DB69A004648E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A31C223DB69A004648E0 /* main.m */; };
 		9339A327223DB69A004648E0 /* SearchBooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A326223DB69A004648E0 /* SearchBooksTests.m */; };
 		9339A332223DB69A004648E0 /* SearchBooksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A331223DB69A004648E0 /* SearchBooksUITests.m */; };
+		9339A345223EADEB004648E0 /* SearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A344223EADEB004648E0 /* SearchService.m */; };
+		9339A34A223EBA38004648E0 /* BookList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A349223EBA38004648E0 /* BookList.m */; };
+		9339A34D223EBA49004648E0 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 9339A34C223EBA49004648E0 /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02858BD4F60647D751BF7FDB /* Pods-SearchBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchBooks/Pods-SearchBooks.release.xcconfig"; sourceTree = "<group>"; };
 		0A3A221A7448C03340DD2E4B /* libPods-SearchBooks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SearchBooks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		589D8D76223EB6E700363CAA /* ResultsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
 		589D8D77223EB6E700363CAA /* ResultsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
+		2057F680150F78DC44369194 /* Pods-SearchBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchBooks/Pods-SearchBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		9339A30A223DB697004648E0 /* SearchBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339A30D223DB697004648E0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9339A30E223DB697004648E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +61,13 @@
 		9339A32D223DB69A004648E0 /* SearchBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9339A331223DB69A004648E0 /* SearchBooksUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBooksUITests.m; sourceTree = "<group>"; };
 		9339A333223DB69A004648E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9339A343223EADEB004648E0 /* SearchService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchService.h; sourceTree = "<group>"; };
+		9339A344223EADEB004648E0 /* SearchService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchService.m; sourceTree = "<group>"; };
+		9339A347223EB2EB004648E0 /* ServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceDelegate.h; sourceTree = "<group>"; };
+		9339A348223EBA38004648E0 /* BookList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookList.h; sourceTree = "<group>"; };
+		9339A349223EBA38004648E0 /* BookList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookList.m; sourceTree = "<group>"; };
+		9339A34B223EBA49004648E0 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		9339A34C223EBA49004648E0 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.release.xcconfig"; path = "Target Support Files/Pods-SearchBooks/Pods-SearchBooks.release.xcconfig"; sourceTree = "<group>"; };
 		FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchBooks.debug.xcconfig"; path = "Target Support Files/Pods-SearchBooks/Pods-SearchBooks.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +103,8 @@
 			children = (
 				FFF9D449694499FFC20A7CE6 /* Pods-SearchBooks.debug.xcconfig */,
 				DEC5191AA7F6EF63DE753F4B /* Pods-SearchBooks.release.xcconfig */,
+				2057F680150F78DC44369194 /* Pods-SearchBooks.debug.xcconfig */,
+				02858BD4F60647D751BF7FDB /* Pods-SearchBooks.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				589D8D72223EB65000363CAA /* Results */,
+				9339A346223EB2D1004648E0 /* Common */,
 				9339A33F223DC95C004648E0 /* Search */,
 				9339A30D223DB697004648E0 /* AppDelegate.h */,
 				9339A30E223DB697004648E0 /* AppDelegate.m */,
@@ -173,8 +188,22 @@
 			children = (
 				9339A310223DB697004648E0 /* SearchViewController.h */,
 				9339A311223DB697004648E0 /* SearchViewController.m */,
+				9339A343223EADEB004648E0 /* SearchService.h */,
+				9339A344223EADEB004648E0 /* SearchService.m */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		9339A346223EB2D1004648E0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9339A347223EB2EB004648E0 /* ServiceDelegate.h */,
+				9339A348223EBA38004648E0 /* BookList.h */,
+				9339A349223EBA38004648E0 /* BookList.m */,
+				9339A34B223EBA49004648E0 /* Book.h */,
+				9339A34C223EBA49004648E0 /* Book.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +363,10 @@
 			files = (
 				589D8D78223EB6E700363CAA /* ResultsTableViewController.m in Sources */,
 				9339A312223DB697004648E0 /* SearchViewController.m in Sources */,
+				9339A345223EADEB004648E0 /* SearchService.m in Sources */,
 				9339A31D223DB69A004648E0 /* main.m in Sources */,
+				9339A34A223EBA38004648E0 /* BookList.m in Sources */,
+				9339A34D223EBA49004648E0 /* Book.m in Sources */,
 				9339A30F223DB697004648E0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
