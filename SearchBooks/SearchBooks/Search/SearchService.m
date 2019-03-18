@@ -24,7 +24,10 @@
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString* urlString = [NSString stringWithFormat:@"http://localhost:3000/books/search?query=%@&page=%ld",text,(long)page];
-    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    
+    NSString *escapedUrl = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
+    [manager GET:escapedUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         __strong id <ServiceDelegate> strongDelegate = self.delegate;
         [strongDelegate serviceSuccededWithResponse:responseObject];
